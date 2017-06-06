@@ -32,7 +32,7 @@ void PrintSide(int left) {
   if (left > 0 && left < 50) {
       if (headPos < 50) {
         headPos++;
-        turningHead = true;
+        turningHead = 1;
       }
       else {
         turningHead = 0;
@@ -41,14 +41,14 @@ void PrintSide(int left) {
       digitalWrite(12, HIGH);
   }
   else if (headPos > 0) {
-    
       pinMode(12, OUTPUT);
       digitalWrite(12, LOW);
       headPos--;
-      turningHead = true;
+      turningHead = 1;
   }
   else {
-    turningHead = false;
+    headPos = 0;
+    turningHead = 0;
   }
 
   if (turningHead) {
